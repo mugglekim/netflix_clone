@@ -1,0 +1,37 @@
+.faq{
+  @include component_size;
+  h2{
+    font-size: $font-size-medium;
+    @include responsive($breakpoint-medium){
+      font-size: $font-size-regular;
+    }
+  }
+}
+.faq-list{
+  li{
+    margin-bottom: 0.5rem;
+  }
+  button{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $bg-color;
+    &:hover{
+      filter: brightness(1.2);
+    }
+    img{
+      color: $text-color;
+    }
+  }
+  button, p{
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+    font-size: $font-size-medium;
+    background-color: #444;
+    color: $text-color;
+    @include responsive($breakpoint-medium){
+      font-size: $font-size-small;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: $bg-color;
+  color: $text-color;
+  word-break: keep-all;
+}
+button{
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+li{
+  list-style: none;
+}

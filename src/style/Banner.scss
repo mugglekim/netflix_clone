@@ -1,0 +1,32 @@
+.banner{
+  @include component_size;
+  padding: 2rem;
+  transition: 0.5s;
+  &:hover{
+    transform: scale(1.1);
+    filter: brightness(1.4);
+  }
+}
+.banner-txt{
+  border-radius: 1rem;
+  padding: 2rem;
+  background-image: linear-gradient(to right, #1c1c2b, #232344);
+  display: flex;
+  justify-content: space-between;
+  div{
+    p:first-child{
+      font-size: $font-size-regular;
+      font-weight: 500;
+    }
+    p:last-child{
+      font-size: $font-size-small;
+      font-weight: 400;
+    }
+  }
+  button{
+    @include button-style;
+    background-color: #444;
+    font-size: $font-size-small;
+    font-weight: 500;
+  }
+}
