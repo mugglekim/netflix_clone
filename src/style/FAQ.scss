@@ -1,7 +1,9 @@
 .faq{
   @include component_size;
+  margin: 4rem auto;
   h2{
     font-size: $font-size-medium;
+    margin: 2rem 0 1rem;
     @include responsive($breakpoint-medium){
       font-size: $font-size-regular;
     }
@@ -15,23 +17,33 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid $bg-color;
+    border-bottom: 2px solid $bg-color;
+    padding: 1rem;
+    cursor: pointer;
     &:hover{
       filter: brightness(1.2);
-    }
-    img{
-      color: $text-color;
     }
   }
   button, p{
     width: 100%;
     text-align: left;
-    padding: 1rem;
     font-size: $font-size-medium;
     background-color: #444;
     color: $text-color;
     @include responsive($breakpoint-medium){
       font-size: $font-size-small;
     }
+  }
+  p{
+    height: 0;
+    transition: 0.2s;
+    visibility: hidden;
+    opacity: 0;
+  }
+  p.open{
+    height: auto;
+    padding: 1rem;
+    opacity: 1;
+    visibility: visible;
   }
 }

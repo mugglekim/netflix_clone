@@ -1,0 +1,47 @@
+.whyjoin{
+  @include component_size;
+  h2{
+    margin-bottom: 1rem;
+  }
+  ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 1rem;
+    @include responsive($breakpoint-large){
+      flex-wrap: wrap;
+    }
+    li{
+      width: 25%;
+      position: relative;
+      border-radius: 1rem;
+      padding: 2rem 1rem 6rem;
+      background: linear-gradient(149deg, #192247 0%, #210e17 96.86%);
+      @include responsive($breakpoint-large){
+        width: 48%;
+      }
+      @include responsive($breakpoint-medium){
+        width: 100%;
+      }
+      p{
+        text-align: left;
+        color: #bbb;
+        &:first-child{
+          color: $text-color;
+          font-weight: 500;
+          font-size: $font-size-medium;
+          margin-bottom: 1rem;
+          @include responsive($breakpoint-medium){
+            font-size: $font-size-regular;
+          }
+        }
+      }
+      div{
+        font-size: 60px;
+        position: absolute;
+        bottom: 0; right: 1rem;
+      }
+    }
+  }
+}

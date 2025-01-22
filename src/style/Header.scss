@@ -24,10 +24,11 @@ nav{
     gap: 0.8rem;
     select{
       padding: 0.5rem 1rem;
-      border-radius: 0.2rem;
+      border-radius: 0.3rem;
       background-color: transparent;
-      border: 1px solid #fff;
+      border: 1px solid #444;
       color: $text-color;
+      cursor: pointer;
       option{
         background-color: #fff;
         color: #000;
@@ -35,12 +36,11 @@ nav{
     }
     button{
       @include button-style;
-
     }
   }
 }
 .header-content{
-  width: 80%;
+  @include component_size;
   position: absolute;
   top: 40%; left:50%;
   transform: translate(-50%, -50%);
@@ -60,41 +60,6 @@ nav{
     @include responsive($breakpoint-large){
       font-size: $font-size-small;
       margin-bottom: 0.5rem;
-    }
-  }
-  p{
-    font-size: $font-size-small;
-  }
-  .email-box{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.8rem;
-    margin-top: 2rem;
-    @include responsive($breakpoint-small){
-      flex-wrap: nowrap;
-    }
-    input{
-      font-size: $font-size-medium;
-      border-radius: 0.2rem;
-      padding: 0.6rem 1rem;
-      background-color: transparent;
-      border: 1px solid #fff;
-      color: $text-color;
-      @include responsive($breakpoint-large){
-        font-size: $font-size-regular;
-      }
-      @include responsive($breakpoint-small){
-        width: 100%;
-      }
-    }
-    button{
-      min-width: 126px;
-      @include button-style;
-      font-size: $font-size-medium;
-      @include responsive($breakpoint-large){
-        font-size: $font-size-regular;
-      }
     }
   }
 }

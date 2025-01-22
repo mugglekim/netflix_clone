@@ -1,0 +1,50 @@
+footer{
+  @include component_size;
+  .f-info, a{
+    text-align: left;
+    color: #bbb;
+    font-weight: 600;
+  }
+  .f-info{
+    margin: 4rem 0 2rem;
+    a{
+      font-size: $font-size-small;
+    }
+  }
+  a{
+    margin-bottom: 1rem;
+    font-size: 0.8rem;
+  }
+  div{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    @include responsive($breakpoint-large){
+      grid-template-columns: repeat(3,1fr);
+    }
+    @include responsive($breakpoint-medium){
+      grid-template-columns: repeat(2,1fr);
+    }
+    @include responsive($breakpoint-small){
+      grid-template-columns: 1fr;
+    }
+  }
+  select{
+    padding: 0.5rem 1rem;
+    border-radius: 0.3rem;
+    background-color: transparent;
+    border: 1px solid #444;
+    color: $text-color;
+    margin: 2rem 0;
+    cursor: pointer;
+    option{
+      background-color: #fff;
+      color: #000;
+    }
+  }
+  .f-txt{
+    font-size: 0.8rem;
+    text-align: left;
+    margin-bottom: 4rem;
+    color: #bbb;
+  }
+}

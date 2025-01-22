@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { LuPlus,LuX } from "react-icons/lu";
 
 const FAQList=[
   {id:1, Q:'넷플릭스에서 어떤 콘텐츠를 시청할 수 있나요?', A:'넷플릭스는 장편 영화, 다큐멘터리, 시리즈, 애니메이션, 각종 상을 수상한 넷플릭스 오리지널 등 수많은 콘텐츠를 확보하고 있습니다. 마음에 드는 콘텐츠를 원하는 시간에 원하는 만큼 시청하실 수 있습니다.'},
@@ -22,10 +23,10 @@ const FAQ = () => {
             return (
               <li key={list.id}>
                 <button onClick={()=>{handleClick(idx)}}>
-                  {list.Q}
-                  <img src="./images/plus.svg" alt="plus"/>
+                  <span>{list.Q}</span>
+                  {openIdx===idx ? <LuX /> : <LuPlus />}
                 </button>
-                {openIdx===idx && <p>{list.A}</p>}
+                {<p className={openIdx===idx? "open":'' }>{list.A}</p>}
               </li>
             )  
           })
