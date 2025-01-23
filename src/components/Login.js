@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { LuCircleX } from "react-icons/lu";
+import { FiAlertCircle } from "react-icons/fi";
+import { LuX } from "react-icons/lu";
 
 const Login = () => {
   const [idFocused,setIdfocused]=useState(false);
@@ -15,7 +16,7 @@ const Login = () => {
   return (
     <div className="login">
       <div className="login-popup">
-        <p className="close" onClick={()=>{navigate('/')}}><LuCircleX /></p>
+        <p className="close" onClick={()=>{navigate('/')}}><LuX /></p>
         <h2>로그인</h2>
         <form onSubmit={handleSubmit}>
           <label className={`${idFocused? "focused":''} ${idError? "error":''}`}>
@@ -31,7 +32,7 @@ const Login = () => {
               }}
             />
           </label>
-          {idError &&<p className="input-error"><LuCircleX /> 정확한 이메일 주소나 전화번호를 입력하세요.</p>}
+          {idError &&<p className="input-error"><FiAlertCircle /><p>정확한 이메일 주소나 전화번호를 입력하세요.</p></p>}
           {
             !isCode && (<label className={`${pwFocused? "focused":''} ${pwError? "error":''}`}>
               <span>비밀번호</span>
@@ -47,7 +48,7 @@ const Login = () => {
               />
             </label>)
           }
-          {pwError &&<p className="input-error"><LuCircleX /> 비밀번호는 4~60자 사이여야 합니다.</p>}
+          {pwError &&<p className="input-error"><FiAlertCircle /><p>비밀번호는 4~60자 사이여야 합니다.</p></p>}
           {isCode && <p className="warningTxt">문자 또는 데이터 요금이 부과될 수 있습니다</p>}
           <button type="submit">
           {isCode ? "로그인 코드 받기":"로그인"}
