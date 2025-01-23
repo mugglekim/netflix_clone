@@ -2,7 +2,7 @@ footer{
   @include component_size;
   .f-info, a{
     text-align: left;
-    color: #bbb;
+    color: $text-sub-color;
     font-weight: 600;
   }
   .f-info{
@@ -45,6 +45,6 @@ footer{
     font-size: 0.8rem;
     text-align: left;
     margin-bottom: 4rem;
-    color: #bbb;
+    color: #aaa;
   }
 }

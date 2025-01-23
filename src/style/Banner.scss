@@ -38,6 +38,7 @@
   transition: 0.5s;
   &:hover{
     filter: brightness(1.2);
+    font-weight: 400;
     background: linear-gradient(91deg, #482566 0%, #161d52 99.51%);
   }
   @media screen and (max-width: 800px) {
