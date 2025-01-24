@@ -62,28 +62,23 @@
       }
     }
     img{
-      width: 90%; height: 260px;
+      width: 90%; height: 300px;
       object-fit: cover;
       border-radius: 0.6rem;
       margin: 0 auto;
       @media screen and (max-width:1440px) {
-        min-width: 120px;
-        height: 200px;
-      }
-      @include responsive($breakpoint-large){
-        min-width: 130px;
         height: 220px;
       }
+      @include responsive($breakpoint-large){
+        height: 180px;
+      }
       @include responsive($breakpoint-medium){
-        min-width: 120px;
         height: 180px;
       }
       @media screen and (max-width:760px) {
-        min-width: 100px;
         height: 140px;
       }
       @include responsive($breakpoint-small){
-        min-width: 100px;
         height: 160px;
       }
     }

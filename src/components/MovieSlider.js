@@ -9,48 +9,47 @@ import axios from 'axios';
 const MovieSlider = () => {
   const [movies,setMovies]=useState([]);
   const [error,setError]=useState(null);
+  const [IsLoading,setIsLoading]=useState(true);
   const fetchMovies=async()=>{
     const API_KEY='decc67e8f617c228c9c976bb05cd39ca';
     const url=`https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=ko-KR&page=1`;
     try{ 
       const response=await axios.get(url);
       setMovies(response.data.results.slice(0,10));
+      setIsLoading(false);
     } catch(error){
       setError('영화 데이터를 가져오는 중 오류가 발생했습니다.');
+      setIsLoading(false);
     }
   }
   useEffect(()=>{
+    setIsLoading(true);
     fetchMovies();
   },[]);
   const settings = {
     dots: false,
     infinite: false,
     speed: 500,
-    slidesToShow: 6,
+    slidesToShow: 5,
     slidesToScroll: 5,
     initialSlide: 0,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
     responsive: [
       {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 5,
-          slidesToScroll: 5
-        }
-      },
-      {
         breakpoint: 960,
         settings: {
           slidesToShow: 4,
-          slidesToScroll: 4
+          slidesToScroll: 4,
+          initialSlide: 0
         }
       },
       {
         breakpoint: 600,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 3
+          slidesToScroll: 3,
+          initialSlide: 0
         }
       }
     ]
@@ -73,6 +72,12 @@ const MovieSlider = () => {
         onClick={onClick}
       ><LuChevronLeft /></div>
     );
+  }
+  if(error){
+    return <div>{error}</div>
+  }
+  if(IsLoading){
+    return <div>Loading...</div>
   }
   return (
     <div className="movie-slider">
