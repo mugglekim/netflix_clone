@@ -1,7 +1,7 @@
 const Banner = () => {
   return (
     <div className="banner">
-      <img src="./images/popcone.png" alt="popcone"/>
+      <img src={`${process.env.PUBLIC_URL}/images/popcone.png`} alt="popcone"/>
       <div className="banner-txt">
         <div>
           <p>5,500원이면 만날 수 있는 넷플릭스.</p>
