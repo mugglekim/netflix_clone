@@ -10,7 +10,7 @@ import WhyJoin from './components/WhyJoin';
 import Login from './components/Login';
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path='/' element={
           <div className='app'>
